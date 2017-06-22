@@ -16,6 +16,7 @@ namespace muziekieApp
     {
         System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\Jaspe\Source\Repos\bloemetjes\muziekieApp\m.wav");
         public string songs;
+        public string rLink;
 
         public Form1()
         {
@@ -43,18 +44,22 @@ namespace muziekieApp
 
         private void BtnShuffle_Click(object sender, EventArgs e)
         {
-            
-            var rand = new Random();
-            var files = Directory.GetFiles(@"C:\Users\Jaspe\Source\Repos\bloemetjes\muziekieApp", " *.wav");
-            try
-            {
-                songs = files[rand.Next(files.Length)];
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("kill yourself");
-            }
-            MessageBox.Show(songs);
+            rLink = getrandomfile2(@"C:\Users\Jaspe\Source\Repos\bloemetjes\muziekieApp");
+
+            player.SoundLocation = rLink;
+            player.Play();
+
+            //var rand = new Random();
+            //var files = Directory.GetFiles(@"C:\Users\Jaspe\Source\Repos\bloemetjes\muziekieApp", " *.wav");
+            //try
+            //{
+            //    songs = files[rand.Next(files.Length)];
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("kill yourself");
+            //}
+            //MessageBox.Show(songs);
 
         }
 
@@ -73,6 +78,27 @@ namespace muziekieApp
         private void Btnreplay_Click(object sender, EventArgs e)
         {
             player.PlayLooping();
+        }
+
+
+        public string getrandomfile2(string path)
+        {
+            string file = null;
+            if (!string.IsNullOrEmpty(path))
+            {
+                var extensions = new string[] { ".wav" };
+                try
+                {
+                    var di = new DirectoryInfo(path);
+                    var rgFiles = di.GetFiles("*.*").Where(f => extensions.Contains(f.Extension.ToLower()));
+                    Random R = new Random();
+                    file = rgFiles.ElementAt(R.Next(0, rgFiles.Count())).FullName;
+                }
+                // probably should only catch specific exceptions
+                // throwable by the above methods.
+                catch { }
+            }
+            return file;
         }
     }
 }

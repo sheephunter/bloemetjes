@@ -9,12 +9,12 @@ namespace muziekieApp
 {
     class functions
     {
-        private string getrandomfile2(string path)
+        public string getrandomfile2(string path)
         {
             string file = null;
             if (!string.IsNullOrEmpty(path))
             {
-                var extensions = new string[] { ".png", ".jpg", ".gif" };
+                var extensions = new string[] { ".wav" };
                 try
                 {
                     var di = new DirectoryInfo(path);
