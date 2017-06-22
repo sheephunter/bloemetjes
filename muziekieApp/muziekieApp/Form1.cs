@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Media;
 using System.Text;
@@ -14,7 +15,7 @@ namespace muziekieApp
     public partial class Form1 : Form
     {
         System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\Jaspe\Source\Repos\bloemetjes\muziekieApp\m.wav");
-
+        public string songs;
 
         public Form1()
         {
@@ -42,6 +43,18 @@ namespace muziekieApp
 
         private void BtnShuffle_Click(object sender, EventArgs e)
         {
+            
+            var rand = new Random();
+            var files = Directory.GetFiles(@"C:\Users\Jaspe\Source\Repos\bloemetjes\muziekieApp", " *.wav");
+            try
+            {
+                songs = files[rand.Next(files.Length)];
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("kill yourself");
+            }
+            MessageBox.Show(songs);
 
         }
 
