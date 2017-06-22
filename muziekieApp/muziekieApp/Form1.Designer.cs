@@ -55,8 +55,9 @@
             this.BtnPlay.Name = "BtnPlay";
             this.BtnPlay.Size = new System.Drawing.Size(75, 23);
             this.BtnPlay.TabIndex = 1;
-            this.BtnPlay.Text = "button1";
+            this.BtnPlay.Text = "Play";
             this.BtnPlay.UseVisualStyleBackColor = true;
+            this.BtnPlay.Click += new System.EventHandler(this.BtnPlay_Click);
             // 
             // button2
             // 
@@ -64,7 +65,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
+            this.button2.Text = "<-";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -74,7 +75,7 @@
             this.BtnForward.Name = "BtnForward";
             this.BtnForward.Size = new System.Drawing.Size(75, 23);
             this.BtnForward.TabIndex = 3;
-            this.BtnForward.Text = "button3";
+            this.BtnForward.Text = "->";
             this.BtnForward.UseVisualStyleBackColor = true;
             this.BtnForward.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -108,7 +109,7 @@
             this.BtnShuffle.Name = "BtnShuffle";
             this.BtnShuffle.Size = new System.Drawing.Size(75, 23);
             this.BtnShuffle.TabIndex = 7;
-            this.BtnShuffle.Text = "button1";
+            this.BtnShuffle.Text = "Shuffle";
             this.BtnShuffle.UseVisualStyleBackColor = true;
             this.BtnShuffle.Click += new System.EventHandler(this.BtnShuffle_Click);
             // 

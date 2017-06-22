@@ -42,5 +42,10 @@ namespace muziekieApp
         {
 
         }
+
+        private void BtnPlay_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
