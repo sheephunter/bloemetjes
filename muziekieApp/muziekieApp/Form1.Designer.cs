@@ -36,6 +36,7 @@
             this.DgMenu = new System.Windows.Forms.DataGridView();
             this.BtnUser = new System.Windows.Forms.Button();
             this.BtnShuffle = new System.Windows.Forms.Button();
+            this.Btnreplay = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgMenu)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +56,7 @@
             this.BtnPlay.Name = "BtnPlay";
             this.BtnPlay.Size = new System.Drawing.Size(75, 23);
             this.BtnPlay.TabIndex = 1;
-            this.BtnPlay.Text = "button1";
+            this.BtnPlay.Text = "Play";
             this.BtnPlay.UseVisualStyleBackColor = true;
             this.BtnPlay.Click += new System.EventHandler(this.BtnPlay_Click);
             // 
@@ -65,7 +66,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
+            this.button2.Text = "<-";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -75,7 +76,7 @@
             this.BtnForward.Name = "BtnForward";
             this.BtnForward.Size = new System.Drawing.Size(75, 23);
             this.BtnForward.TabIndex = 3;
-            this.BtnForward.Text = "button3";
+            this.BtnForward.Text = "->";
             this.BtnForward.UseVisualStyleBackColor = true;
             this.BtnForward.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -109,15 +110,26 @@
             this.BtnShuffle.Name = "BtnShuffle";
             this.BtnShuffle.Size = new System.Drawing.Size(75, 23);
             this.BtnShuffle.TabIndex = 7;
-            this.BtnShuffle.Text = "button1";
+            this.BtnShuffle.Text = "Shuffle";
             this.BtnShuffle.UseVisualStyleBackColor = true;
             this.BtnShuffle.Click += new System.EventHandler(this.BtnShuffle_Click);
+            // 
+            // Btnreplay
+            // 
+            this.Btnreplay.Location = new System.Drawing.Point(1227, 536);
+            this.Btnreplay.Name = "Btnreplay";
+            this.Btnreplay.Size = new System.Drawing.Size(75, 23);
+            this.Btnreplay.TabIndex = 8;
+            this.Btnreplay.Text = "Replay";
+            this.Btnreplay.UseVisualStyleBackColor = true;
+            this.Btnreplay.Click += new System.EventHandler(this.Btnreplay_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1480, 614);
+            this.Controls.Add(this.Btnreplay);
             this.Controls.Add(this.BtnShuffle);
             this.Controls.Add(this.BtnUser);
             this.Controls.Add(this.DgMenu);
@@ -145,6 +157,7 @@
         private System.Windows.Forms.DataGridView DgMenu;
         private System.Windows.Forms.Button BtnUser;
         private System.Windows.Forms.Button BtnShuffle;
+        private System.Windows.Forms.Button Btnreplay;
     }
 }
 
