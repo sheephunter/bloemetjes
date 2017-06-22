@@ -22,5 +22,25 @@ namespace muziekieApp
             MessageBox.Show("crack");
             MessageBox.Show("g");
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Hier komen de liedjes
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //Backward
+        }
+
+        private void BtnShuffle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
