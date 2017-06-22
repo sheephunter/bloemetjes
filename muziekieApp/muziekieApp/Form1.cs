@@ -56,5 +56,10 @@ namespace muziekieApp
                 MessageBox.Show("enaa g is fout na g");
             }
         }
+
+        private void Btnreplay_Click(object sender, EventArgs e)
+        {
+            player.PlayLooping();
+        }
     }
 }
