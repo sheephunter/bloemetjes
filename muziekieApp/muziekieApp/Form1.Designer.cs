@@ -57,6 +57,7 @@
             this.BtnPlay.TabIndex = 1;
             this.BtnPlay.Text = "button1";
             this.BtnPlay.UseVisualStyleBackColor = true;
+            this.BtnPlay.Click += new System.EventHandler(this.BtnPlay_Click);
             // 
             // button2
             // 
@@ -95,7 +96,7 @@
             // 
             // BtnUser
             // 
-            this.BtnUser.Location = new System.Drawing.Point(1337, 12);
+            this.BtnUser.Location = new System.Drawing.Point(1309, 12);
             this.BtnUser.Name = "BtnUser";
             this.BtnUser.Size = new System.Drawing.Size(75, 23);
             this.BtnUser.TabIndex = 6;
