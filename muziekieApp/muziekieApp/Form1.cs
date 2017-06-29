@@ -14,6 +14,7 @@ namespace muziekieApp
 {
     public partial class Form1 : Form
     {
+        
         System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\Jaspe\Source\Repos\bloemetjes\muziekieApp\m.wav");
         public string songs;
         public string rLink;
@@ -29,7 +30,7 @@ namespace muziekieApp
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -73,6 +74,11 @@ namespace muziekieApp
             {
                 MessageBox.Show("enaa g is fout na g");
             }
+            BtnPlay.Visible = false;
+            BtnPlay.Enabled = false;
+
+            BtnStop.Enabled = true;
+            BtnStop.Visible = true;
         }
 
         private void Btnreplay_Click(object sender, EventArgs e)
@@ -99,6 +105,37 @@ namespace muziekieApp
                 catch { }
             }
             return file;
+        }
+
+        public string getNextSong(string path)
+        {
+            string file = null;
+            if (!string.IsNullOrEmpty(path))
+            {
+                var extensions = new string[] { ".wav" };
+                try
+                {
+                    var di = new DirectoryInfo(path);
+                    var rgFiles = di.GetFiles("*.*").Where(f => extensions.Contains(f.Extension.ToLower()));
+                    file = rgFiles.ElementAt(0(0, rgFiles.Count())).FullName;
+                }
+                // probably should only catch specific exceptions
+                // throwable by the above methods.
+                catch { }
+            }
+            return file;
+        }
+
+        private void BtnStop_Click(object sender, EventArgs e)
+        {
+            player.Stop();
+
+            BtnPlay.Visible = true;
+            BtnStop.Enabled = false;
+
+            BtnPlay.Enabled = true;
+            BtnStop.Visible = false;
+            
         }
     }
 }

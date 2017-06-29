@@ -37,6 +37,7 @@
             this.BtnUser = new System.Windows.Forms.Button();
             this.BtnShuffle = new System.Windows.Forms.Button();
             this.Btnreplay = new System.Windows.Forms.Button();
+            this.BtnStop = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgMenu)).BeginInit();
             this.SuspendLayout();
@@ -124,11 +125,24 @@
             this.Btnreplay.UseVisualStyleBackColor = true;
             this.Btnreplay.Click += new System.EventHandler(this.Btnreplay_Click);
             // 
+            // BtnStop
+            // 
+            this.BtnStop.Enabled = false;
+            this.BtnStop.Location = new System.Drawing.Point(657, 536);
+            this.BtnStop.Name = "BtnStop";
+            this.BtnStop.Size = new System.Drawing.Size(75, 23);
+            this.BtnStop.TabIndex = 9;
+            this.BtnStop.Text = "Pause";
+            this.BtnStop.UseVisualStyleBackColor = true;
+            this.BtnStop.Visible = false;
+            this.BtnStop.Click += new System.EventHandler(this.BtnStop_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1480, 614);
+            this.Controls.Add(this.BtnStop);
             this.Controls.Add(this.Btnreplay);
             this.Controls.Add(this.BtnShuffle);
             this.Controls.Add(this.BtnUser);
@@ -158,6 +172,7 @@
         private System.Windows.Forms.Button BtnUser;
         private System.Windows.Forms.Button BtnShuffle;
         private System.Windows.Forms.Button Btnreplay;
+        private System.Windows.Forms.Button BtnStop;
     }
 }
 
