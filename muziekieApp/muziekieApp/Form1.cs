@@ -49,7 +49,6 @@ namespace muziekieApp
         private void BtnShuffle_Click(object sender, EventArgs e)
         {
             
-            MessageBox.Show(pathMusic);
             rLink = getrandomfile2(pathMusic);
 
             BtnPlay.Visible = true;
