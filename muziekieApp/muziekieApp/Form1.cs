@@ -9,13 +9,16 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows;
+using System.Windows.Media;
 
 namespace muziekieApp
 {
     public partial class Form1 : Form
     {
-        
-        System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\Jaspe\Source\Repos\bloemetjes\muziekieApp\m.wav");
+        string pathMusic = Environment.CurrentDirectory + @"\music";
+        MediaPlayer mainPlayer = new MediaPlayer();
+        System.Media.SoundPlayer player = new System.Media.SoundPlayer(Environment.CurrentDirectory + @"\music\m.wav");
         public string songs;
         public string rLink;
 
@@ -45,11 +48,20 @@ namespace muziekieApp
 
         private void BtnShuffle_Click(object sender, EventArgs e)
         {
-            rLink = getrandomfile2(@"C:\Users\Jaspe\Source\Repos\bloemetjes\muziekieApp");
+            
+            MessageBox.Show(pathMusic);
+            rLink = getrandomfile2(pathMusic);
+
+            BtnPlay.Visible = true;
+            BtnStop.Enabled = false;
+
+            BtnPlay.Enabled = true;
+            BtnStop.Visible = false;
 
             player.SoundLocation = rLink;
             player.Play();
 
+            label1.Visible = true;
             //var rand = new Random();
             //var files = Directory.GetFiles(@"C:\Users\Jaspe\Source\Repos\bloemetjes\muziekieApp", " *.wav");
             //try
@@ -67,6 +79,10 @@ namespace muziekieApp
         private void BtnPlay_Click(object sender, EventArgs e)
         {
             try{
+                //mainPlayer. = @"C:\Users\Jaspe\Source\Repos\bloemetjes\muziekieApp\m.wav";
+                label1.Visible = false;
+                
+                
                 //player.SoundLocation = @"C:\Users\Jaspe\Source\Repos\bloemetjes\muziekieApp\m.wav";
                 player.Play();
             }
@@ -117,7 +133,7 @@ namespace muziekieApp
                 {
                     var di = new DirectoryInfo(path);
                     var rgFiles = di.GetFiles("*.*").Where(f => extensions.Contains(f.Extension.ToLower()));
-                    file = rgFiles.ElementAt(0(0, rgFiles.Count())).FullName;
+                    //file = rgFiles.ElementAt(0(0, rgFiles.Count())).FullName;
                 }
                 // probably should only catch specific exceptions
                 // throwable by the above methods.
@@ -135,6 +151,11 @@ namespace muziekieApp
 
             BtnPlay.Enabled = true;
             BtnStop.Visible = false;
+            
+        }
+
+        private void rbTheme1_CheckedChanged(object sender, EventArgs e)
+        {
             
         }
     }
